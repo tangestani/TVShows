@@ -781,9 +781,9 @@
 - (void) activateStatusMenu
 {
     statusItem = [[[NSStatusBar systemStatusBar] statusItemWithLength:NSSquareStatusItemLength] retain];
-    
-    [statusItem setImage:[NSImage imageNamed:@"TVShows-Menu-Icon-Black"]];
-    [statusItem setAlternateImage:[NSImage imageNamed:@"TVShows-Menu-Icon-White"]];
+    NSImage *image = [NSImage imageNamed:@"TVShows-Menu-Icon-Black"];
+    [image setTemplate:YES];
+    [statusItem setImage:image];
     [statusItem setEnabled:YES];
     [statusItem setHighlightMode:YES];
     [statusItem setTarget:self];
